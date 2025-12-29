@@ -13,10 +13,10 @@ title                    : "Tarun Prakash"
 title_separator          : "-"
 name                     : &name "Tarun Prakash"
 description              : &description "Tarun Prakash's personal website"   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://tarunprakash.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
-                                                           # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+url                      : https://tarunprakash2468.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+                                                          # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "tarunprakash/tarunprakash.github.io"
+repository               : "tarunprakash2468/tarunprakash2468.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -29,7 +29,7 @@ author:
   bio              : "Tarun Prakash's personal website"
   location         : "Los Angeles, CA"
   employer         : "Purdue University"
-  uri              : "https://tarunprakash.github.io"
+  uri              : "https://tarunprakash2468.github.io"
   email            : "tarunprakash2468@gmail.com" 
 
   # Repositories and software development
