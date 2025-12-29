@@ -135,6 +135,16 @@
     }
   }
 
+  /* copy link button */
+
+  &--copy {
+    background-color: #6c757d;
+
+    &:hover {
+      background-color: mix(#000, #6c757d, 20%);
+    }
+  }
+
   /* extra large button */
 
   &--x-large {
