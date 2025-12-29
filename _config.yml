@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Tarun Prakash"
   pronouns         : # example: "she/her"  
-  bio              : "Tarun Prakash's personal website"
+  bio              : # Removed - no bio on main page
   location         : "Los Angeles, CA"
   employer         : "Purdue University"
   uri              : "https://tarunprakash2468.github.io"

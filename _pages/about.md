@@ -7,9 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-I'm a Mission Operations Engineer at [Nominal](https://www.nominal.io/), where I deploy and operate telemetry systems for aerospace and defense customers. Before joining Nominal, I spent a year in the U.S. government as a [NobleReach Scholar](https://noblereach.org/), working on national security space launches at Space Systems Command and supporting dual-use startup investments at SpaceWERX.
+I'm a Mission Operations Engineer at [Nominal](https://www.nominal.io/), where I deploy software that accelerates hardware testing for mission-critical systems. Before joining Nominal, I spent a year in the U.S. government as a [NobleReach Scholar](https://noblereach.org/), working on the National Security Space Launch program at Space Systems Command and supporting dual-use startup investments at SpaceWERX.
 
-I studied mechanical engineering at Purdue University and interned at SpaceX before my time in government. I'm interested in space systems, defense technology, and building bridges between the tech industry and the public sector.
+I studied mechanical engineering at Purdue University and began my career working on hardware programs at SpaceX and Tesla. In parallel, I’ve founded multiple startups, including Nize, an edtech company.
+
+I’m interested in aerospace, particularly space systems, defense tech, and national security, with a focus on how startups and government partners deliver mission-critical capabilities. I’m especially motivated by work at the intersection of innovation, policy, and public service, where engineering rigor and speed directly shape real-world outcomes.
 
 ## Featured
 {% assign all_items = site.posts | concat: site.media | sort: 'date' | reverse %}
