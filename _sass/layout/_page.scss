@@ -43,6 +43,14 @@
   }
 }
 
+.page__subtitle {
+  margin-top: 0.25em;
+  margin-bottom: 1em;
+  font-size: $type-size-5;
+  font-style: italic;
+  color: var(--global-text-color-light);
+}
+
 .page__lead {
   font-family: $global-font-family;
   font-size: $type-size-4;
