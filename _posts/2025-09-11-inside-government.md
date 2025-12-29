@@ -2,7 +2,7 @@
 title: 'Lessons From a Year Inside the U.S. Government'
 subtitle: 'What national security space launches and startup innovation taught me about mission, speed, and impact'
 date: 2025-09-11
-permalink: /posts/2025/09/inside-government/
+permalink: /posts/2025-09-11-inside-government
 ---
 
 Introduction

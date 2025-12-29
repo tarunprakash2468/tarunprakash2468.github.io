@@ -1,0 +1,259 @@
+{% assign resume = site.data.resume %}
+
+<style>
+  .archive {
+    width: 80%;
+    margin: 0 auto;
+    float: none;
+    padding-right: 0;
+  }
+  
+  @media (min-width: 80em) {
+    .archive {
+      width: 70%;
+    }
+  }
+</style>
+
+<div class="resume-container">
+  <!-- Basic Information -->
+  <div class="resume-section resume-header">
+    <h1>{{ resume.basics.name }}</h1>
+    {% if resume.basics.label %}
+    <h2>{{ resume.basics.label }}</h2>
+    {% endif %}
+    
+    <div class="resume-contact">
+      {% if resume.basics.email %}
+      <div class="resume-contact-item">
+        <i class="fas fa-envelope"></i> {{ resume.basics.email }}
+      </div>
+      {% endif %}
+      
+      {% if resume.basics.phone %}
+      <div class="resume-contact-item">
+        <i class="fas fa-phone"></i> {{ resume.basics.phone }}
+      </div>
+      {% endif %}
+      
+      {% if resume.basics.website %}
+      <div class="resume-contact-item">
+        <i class="fas fa-globe"></i> <a href="{{ resume.basics.website }}" target="_blank">{{ resume.basics.website }}</a>
+      </div>
+      {% endif %}
+      
+      {% if resume.basics.location.city %}
+      <div class="resume-contact-item">
+        <i class="fas fa-map-marker-alt"></i> {{ resume.basics.location.city }}{% if resume.basics.location.region %}, {{ resume.basics.location.region }}{% endif %}{% if resume.basics.location.countryCode %}, {{ resume.basics.location.countryCode }}{% endif %}
+      </div>
+      {% endif %}
+    </div>
+    
+    {% if resume.basics.profiles.size > 0 %}
+    <div class="resume-profiles">
+      {% for profile in resume.basics.profiles %}
+      <a href="{{ profile.url }}" target="_blank" class="resume-profile-link">
+        <i class="fab fa-{{ profile.network | downcase }}"></i> {{ profile.network }}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  
+  {% if resume.basics.summary %}
+  <!-- Summary -->
+  <div class="resume-section">
+    <h2>Summary</h2>
+    <p>{{ resume.basics.summary }}</p>
+  </div>
+  {% endif %}
+  
+  {% if resume.education.size > 0 %}
+  <!-- Education -->
+  <div class="resume-section">
+    <h2>Education</h2>
+    <ul class="resume-list">
+      {% for education in resume.education %}
+      <li class="resume-item">
+        <div class="resume-item-header">
+          <div class="resume-item-title">{{ education.area }}</div>
+          <div class="resume-item-date">{{ education.endDate }}</div>
+        </div>
+        <div class="resume-item-content">
+          <div class="resume-item-subtitle">{{ education.institution }}</div>
+          {% if education.gpa %}
+          <div class="resume-item-detail">GPA: {{ education.gpa }}</div>
+          {% endif %}
+          {% if education.courses.size > 0 %}
+          <div class="resume-item-detail">
+            <strong>Courses:</strong> {{ education.courses | join: ", " }}
+          </div>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if resume.work.size > 0 %}
+  <!-- Work Experience -->
+  <div class="resume-section">
+    <h2>Work Experience</h2>
+    <ul class="resume-list">
+      {% for work in resume.work %}
+      <li class="resume-item">
+        <div class="resume-item-header">
+          <div class="resume-item-title">{{ work.position }}</div>
+          <div class="resume-item-date">{{ work.startDate }}{% if work.endDate %} - {{ work.endDate }}{% endif %}</div>
+        </div>
+        <div class="resume-item-content">
+          <div class="resume-item-subtitle">{{ work.company }}</div>
+          {% if work.summary %}
+          <div class="resume-item-detail">{{ work.summary }}</div>
+          {% endif %}
+          {% if work.highlights.size > 0 %}
+          <ul class="resume-highlights">
+            {% for highlight in work.highlights %}
+            <li>{{ highlight }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if resume.skills.size > 0 %}
+  <!-- Skills -->
+  <div class="resume-section">
+    <h2>Skills</h2>
+    <div class="resume-skills">
+      {% for skill in resume.skills %}
+      <div class="resume-skill-category">
+        <h3>{{ skill.name }}</h3>
+        <ul class="resume-skill-list">
+          {% for keyword in skill.keywords %}
+          <li>{{ keyword }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  
+  {% if resume.publications.size > 0 %}
+  <!-- Publications -->
+  <div class="resume-section">
+    <h2>Publications</h2>
+    <ul class="resume-list">
+      {% for publication in resume.publications %}
+      <li class="resume-item">
+        <div class="resume-item-header">
+          <div class="resume-item-title">{{ publication.name }}</div>
+          <div class="resume-item-date">{{ publication.releaseDate | slice: 0, 4 }}</div>
+        </div>
+        <div class="resume-item-content">
+          <div class="resume-item-subtitle">{{ publication.publisher }}</div>
+          {% if publication.summary %}
+          <div class="resume-item-detail">{{ publication.summary }}</div>
+          {% endif %}
+          {% if publication.website %}
+          <div class="resume-item-detail">
+            <a href="{{ publication.website }}" target="_blank">View Publication</a>
+          </div>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if resume.portfolio.size > 0 %}
+  <!-- Portfolio -->
+  <div class="resume-section">
+    <h2>Portfolio</h2>
+    <ul class="resume-list">
+      {% for item in resume.portfolio %}
+      <li class="resume-item">
+        <div class="resume-item-header">
+          <div class="resume-item-title">{{ item.name }}</div>
+          <div class="resume-item-date">{{ item.date | slice: 0, 4 }}</div>
+        </div>
+        <div class="resume-item-content">
+          <div class="resume-item-subtitle">{{ item.category | capitalize }}</div>
+          {% if item.description %}
+          <div class="resume-item-detail">{{ item.description }}</div>
+          {% endif %}
+          {% if item.url %}
+          <div class="resume-item-detail">
+            <a href="{{ item.url }}" target="_blank">View Project</a>
+          </div>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if resume.languages.size > 0 %}
+  <!-- Languages -->
+  <div class="resume-section">
+    <h2>Languages</h2>
+    <ul class="resume-list">
+      {% for language in resume.languages %}
+      <li class="resume-item">
+        <div class="resume-item-content">
+          <div class="resume-item-title">{{ language.language }}</div>
+          <div class="resume-item-detail">{{ language.fluency }}</div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if resume.interests.size > 0 %}
+  <!-- Interests -->
+  <div class="resume-section">
+    <h2>Interests</h2>
+    <ul class="resume-list">
+      {% for interest in resume.interests %}
+      <li class="resume-item">
+        <div class="resume-item-content">
+          <div class="resume-item-title">{{ interest.name }}</div>
+          {% if interest.keywords.size > 0 %}
+          <div class="resume-item-detail">{{ interest.keywords | join: ", " }}</div>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if resume.references.size > 0 %}
+  <!-- References -->
+  <div class="resume-section">
+    <h2>References</h2>
+    <ul class="resume-list">
+      {% for reference in resume.references %}
+      <li class="resume-item">
+        <div class="resume-item-content">
+          <div class="resume-item-title">{{ reference.name }}</div>
+          {% if reference.reference %}
+          <div class="resume-item-detail">{{ reference.reference }}</div>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</div>
+

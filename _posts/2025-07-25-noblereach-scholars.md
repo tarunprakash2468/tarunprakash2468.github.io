@@ -1,8 +1,8 @@
 ---
 title: 'The Bridge Between Tech and Government'
-subtitle: 'My Time as a NobleReach Scholar'
+subtitle: 'My time as a NobleReach Scholar'
 date: 2025-07-25
-permalink: /posts/2025/07/noblereach/
+permalink: /posts/2025-07-25-noblereach-scholars
 ---
 
 Introduction
